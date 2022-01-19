@@ -16,7 +16,10 @@
 
         <nav class="nav bottom_nav justify-content-center align-content-center ">
             
-            <a class="nav-link active " href="">COMICS </a>
+            <a class="nav-link" href="{{route('home')}}">HOME</a>
+            <a class="nav-link" href="{{route('comics')}}">COMICS</a>
+
+
             
 
 
