@@ -22,6 +22,11 @@
             </div>
             @endforeach
         </div>
+
+        <div class="text-center mb-5">
+
+            <a class="btn btn-primary" href="{{route('comics.create')}}" role="button">CREATE</a>
+        </div>
         <div class="load_more">LOAD MORE</div>
 
     </div>
