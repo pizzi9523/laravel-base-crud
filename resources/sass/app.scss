@@ -1,1 +1,306 @@
-@use  'bootstrap';
+//
+@use 'bootstrap';
+@import 'partials/variables';
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.py-6{
+    padding: 4rem 0;
+}
+
+
+#site_header{
+
+    .top_header{
+        background-color: $primary-site-color;
+    }
+
+    .bottom_header{
+      nav{
+        a{
+            font-weight: bold;
+            color: black;
+            font-size: 1rem;
+            &:hover{
+              color: $primary-site-color;
+              border-bottom: 4px solid $primary-site-color;
+              margin-bottom: -56px;
+            }
+
+            &.active{
+              color: $primary-site-color;
+              border-bottom: 4px solid $primary-site-color;
+              margin-bottom: -56px;
+            }
+        }
+                
+        input{
+            border-bottom: solid 2px $primary-site-color !important;
+            border: none;
+        }
+    }
+}
+
+    }
+    
+    
+
+#site_main{
+  .series_container{
+    background-color: #1c1c1c;
+    padding-bottom: 50px;
+
+    .series{
+        position: relative;
+        a{
+          text-decoration: none;
+        }
+        .my_card.comic {
+            img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+            div {
+                font-size: 13 px;
+                padding: 1rem 0;
+                color: white;
+            }
+        }
+    }
+  }
+
+    .jumbotron {
+        height: 400px;
+        background-image: url("../img/jumbotron.jpg");
+        background-size: cover;
+        .comic{
+          position: relative;
+          top: 170px;
+          left: 0;
+          display: inline-block;
+          .poster{
+            width: fit-content;
+            border: 2px solid white;
+            .comic_book{
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              display: inline-block;
+              background-color: #00A9D9;
+              padding: 0 5px;
+            }
+
+            .view_gallery{
+              position: absolute;
+              bottom: 2px;
+              background-color: #00A9D9;
+              width: calc(100% - 4px)
+            }
+
+          }
+          
+        }
+    }
+
+    .sep{
+      height: 80px;
+      background-color: $primary-site-color;
+    }
+
+    .current_series {
+        text-align: center;
+        color: white;
+        padding: 1rem 1.5rem;
+        background-color: $primary-site-color;
+        font-weight: bold;
+        font-size: 25px;
+        display: inline-block;
+        position: absolute;
+        top: -1.8rem;
+        left: 6rem;
+}
+
+    .load_more {
+        text-align: center;
+        color: white;
+        padding: 0.8rem 4rem;
+        background-color: $primary-site-color;
+        width: fit-content;
+        margin: auto;
+        font-weight: bold;
+    }
+
+    .main_footer {
+        background-color: $primary-site-color;
+        padding: 50px 0;
+
+        
+        .my_card {
+            display: flex;
+            align-items: center;
+            color: white;
+            gap: 10px;
+            padding: 10px 0;;
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+
+#site_footer {
+  .top-footer {
+    background: url("../img/dc-logo-bg.png") 90%,
+      url("../img/footer-bg.jpg");
+    background-size: 730px, cover;
+    background-repeat: no-repeat;
+    .row {
+      justify-content: space-between;
+
+      .links {
+        display: flex;
+        gap: 50px;
+        padding-top: 80px 0;
+        width: calc(100% / 2);
+
+        h5 {
+          color: white;
+          padding: 20px 0;
+          font-size: 24px;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            padding: 3px 0;
+            a {
+              text-decoration: none;
+              color: $link-color;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .copyright{
+        color: $link-color
+    }
+  }
+  .bottom-footer {
+    background-color: $dark-footer-bg;
+
+    .row {
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0;
+      .sign-up {
+        color: white;
+        padding: 10px 0;
+        border: 1px solid $primary-site-color;
+        font-weight: bold;
+      }
+      .social {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        div {
+          color: $primary-site-color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+/*SINGLE COMIC*/
+.small_container{
+  width: 1000px;
+  margin: auto;
+  .comic_title{
+    color: #003F5E;
+  }
+  .comic_description{
+    color: #656d6b;
+  }
+
+  .row_price{
+    background-color: #55BA59;
+    color: #BAF980;
+    border-bottom: 1px solid #357739;
+
+    .price_container{
+      display: flex;
+      justify-content: space-between;
+      border-right: 2px solid #357739;
+      padding: 10px;
+
+    }
+
+    .check_availability{
+      padding: 10px;
+    }
+
+  }
+
+  .advertisement  {
+    color: #656d6b;
+  }
+
+  
+}
+
+.comic_footer{
+  border-top: 1px solid lightgray;
+  background-color: #F6F6F6;
+  h3{
+      color: #003F5E;
+  }
+  .col-6{
+    
+      .row{
+      border-top: 1px solid lightgray;
+      color: $primary-site-color;
+      padding: 10px 0;
+      font-size: 14px;
+
+        &:last-child{
+        border-bottom: 1px solid lightgray ;
+        }
+
+        .col_title{
+          font-size: 16px;
+          font-weight: 500;
+          color: #003F5E;
+        }
+      
+    }
+
+  }
+
+  .container_special{
+    border-top: 1px solid #D8D8D8;
+  }
+  .row_special{
+    &:last-child{
+      border-right: 1px solid #D8D8D8;
+
+
+    }
+    h6{
+      color: #9F9F9F;
+      border-left: 1px solid #D8D8D8;
+      padding: 40px 20px;
+    }
+    
+  }
+  
+  
+}
