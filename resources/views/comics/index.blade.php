@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
  @section('content')
+ @if (session('message'))
+            <div class="alert alert-success">
+                 {{ session('message') }}
+            </div>
+        @endif
  <div class="jumbotron container-fluid"></div>
 
 <div class="container-fluid series_container">

@@ -2,7 +2,7 @@
 
 
 @section('content')
-@if (session('message'))
+        @if (session('message'))
             <div class="alert alert-success">
                  {{ session('message') }}
             </div>
@@ -28,6 +28,45 @@
         <div class="row py-5">
             <div class="col-8">
                 <a class="btn btn-primary my-2" href="{{route('comic.edit', $comic->id)}}" role="button">EDIT</a>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#delete{{$comic->id}}">
+                  DELETE
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="delete{{$comic->id}}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">{{$comic->title}}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                            </div>
+                            <div class="modal-body">
+                                ⚠️ Attenzione stai eliminando il fumetto  ⚠️
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <form action="{{ route('comic.destroy', $comic->id)}}" method="post">
+                                     @csrf 
+                                     @method('DELETE')
+
+                                     <button class="btn btn-danger" type="submit">DELETE</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+
+
+
+                
                 <h2 class="comic_title">{{$comic->title}}</h2>
 
                 <div class="row_price row mx-0">

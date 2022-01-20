@@ -11,6 +11,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <!-- Script  -->
+        <script src="{{asset('js/app.js')}}" defer></script>
+
     </head>
 
 
@@ -23,6 +26,7 @@
         </main>
 
         @include('partials.footer')
+
         
     </body>
 </html>
