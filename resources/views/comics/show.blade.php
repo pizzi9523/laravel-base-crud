@@ -2,8 +2,15 @@
 
 
 @section('content')
+@if (session('message'))
+            <div class="alert alert-success">
+                 {{ session('message') }}
+            </div>
+        @endif
     <div class="jumbotron container-fluid">
+        
         <div class="small_container">
+            
             <div class="comic">
                 <div class="poster">
                     <div class="comic_book text-light text-center">COMIC BOOK</div>
@@ -12,6 +19,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
     <div class="sep"></div>
@@ -19,6 +27,7 @@
     <div class="small_container ">
         <div class="row py-5">
             <div class="col-8">
+                <a class="btn btn-primary my-2" href="{{route('comic.edit', $comic->id)}}" role="button">EDIT</a>
                 <h2 class="comic_title">{{$comic->title}}</h2>
 
                 <div class="row_price row mx-0">

@@ -9,17 +9,18 @@
 
         <div class="row py-6">
             @foreach($comics as $comic)
-            <div class="col-2">
+            <div class="col-2 ">
 
 
                 <a href="{{ route('comic', ['comic' => $comic->id]) }}">
-                    <div class="my_card comic">
-                        <img src="{{ $comic->thumb }}" alt="" />
+                    <div class="my_card comic position-relative">
+                        <img class="w-100" src="{{ $comic->thumb }}" alt="" />
                         <div class="text-uppercase">{{ $comic->series }}</div>
                     </div>
                 </a>
 
             </div>
+
             @endforeach
         </div>
 

@@ -78,7 +78,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -90,7 +90,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $validateData = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'nullable',
+            'thumb' => 'required|url',
+            'price' => 'nullable|max:255',
+            'series' => 'required|max:255'
+        ]);
+
+        $comic->update($validateData);
+
+        return redirect()->route('comic', $comic->id)->with('message', 'Modifica effettuata con successo ✔️');
     }
 
     /**
