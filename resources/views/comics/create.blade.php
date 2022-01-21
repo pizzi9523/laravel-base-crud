@@ -37,6 +37,8 @@
     <input class="form-control mb-4" type="text" name="series" id="series" placeholder="Insert a series">
 
     <button class="btn btn-primary my-5" type="submit">Save</button>
+    <a class="btn btn-secondary my-2" href="{{route('comics')}}" role="button">Back</a>
+
     
     </form>
 </div>
