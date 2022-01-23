@@ -4,6 +4,8 @@
             <nav class="nav  justify-content-end">
                 <a class="nav-link text-light" href="#">DC POWER℠VISA®</a>
                 <a class="nav-link text-light" href="#">ADDITIONAL DC SITES &dtrif;</a>
+                <a class="nav-link text-light" href="{{route('admin')}}">ADMIN</a>
+
             </nav>
         </div>
 
@@ -18,6 +20,7 @@
             
             <a class="nav-link" href="{{route('home')}}">HOME</a>
             <a class="nav-link" href="{{route('comics')}}">COMICS</a>
+
 
 
             

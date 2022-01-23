@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -16,7 +17,7 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('comics.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -37,26 +38,20 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-
         $validateData = $request->validate([
             'title' => 'required|max:255|unique:comics',
             'description' => 'nullable',
             'thumb' => 'required|url',
             'price' => 'nullable|max:255',
-            'series' => 'required|max:255'
+            'series' => 'required|max:255',
+            'sale_date' => 'date',
+            'type' => 'nullable|max:255',
+
         ]);
 
         Comic::create($validateData);
 
-        return redirect()->route('comics');
-        /* $comic = new Comic();
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->thumb = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-
-        $comic->save(); */
+        return redirect()->route('admin.comics');
     }
 
     /**
@@ -67,7 +62,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('comics.show', compact('comic'));
+        //
     }
 
     /**
@@ -78,7 +73,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        return view('comics.edit', compact('comic'));
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -94,17 +89,20 @@ class ComicController extends Controller
             'title' => [
                 'required',
                 'max:255',
-                Rule::unique('comics')->ignore($comic->id)
+                Rule::unique('comics')->ignore($comic->id),
             ],
             'description' => 'nullable',
             'thumb' => 'required|url',
             'price' => 'nullable|max:255',
-            'series' => 'required|max:255'
+            'series' => 'required|max:255',
+            'sale_date' => 'date',
+            'type' => 'max:255',
+
         ]);
 
         $comic->update($validateData);
 
-        return redirect()->route('comic', $comic->id)->with('message', 'Modifica effettuata con successo ✔️');
+        return redirect()->route('admin.comics');
     }
 
     /**
@@ -117,6 +115,6 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics')->with('message', '✔️ Hai Eliminato Correttamente Il Fumetto');
+        return redirect()->route('admin.comics');
     }
 }
