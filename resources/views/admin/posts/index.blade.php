@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 
 @section('admin_content')
+    <div class="text-center my-5">
 
+        <a class="btn btn-primary " href="{{ route('admin.posts.create') }}" role="button">CREATE</a>
+    </div>
 
     <div class="container-fluid">
 

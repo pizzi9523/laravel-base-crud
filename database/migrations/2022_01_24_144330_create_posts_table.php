@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body')->nullable();
-            $table->string('image')->default('https://picsum.photos/200/300');
+            $table->string('image')->default('https://picsum.photos/200/300')->nullable();
             $table->timestamps();
         });
     }

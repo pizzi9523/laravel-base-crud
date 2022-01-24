@@ -26,7 +26,7 @@
         <div class="sidenav d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
             <a href="#" class="d-flex link-dark text-decoration-none justify-content-center">
                 <div class="fs-4">
-                    <img src="../img/dc-logo.png" alt="">
+                    <img src="{{ asset('img/dc-logo.png') }}" alt="">
                 </div>
             </a>
             <hr>
