@@ -33,3 +33,5 @@ Route::get('admin/comics/{comic}', 'Admin\ComicController@show')->name('admin.co
 Route::get('admin/comics/{comic}/edit', 'Admin\ComicController@edit')->name('admin.comic.edit');
 Route::put('admin/comics/{comic}', 'Admin\ComicController@update')->name('admin.comic.update');
 Route::delete('admin/comics/{comic}', 'Admin\ComicController@destroy')->name('admin.comic.destroy');
+
+Route::resource('admin/posts', 'Admin\PostController');
