@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <!-- Script  -->
         <script src="{{asset('js/app.js')}}" defer></script>
@@ -20,51 +21,42 @@
     <body class="d-flex">
         <aside class="">
             <div class="sidenav d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-                <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <span class="fs-4">Sidebar</span>
+                <a href="#" class="d-flex link-dark text-decoration-none justify-content-center">
+                    <div class="fs-4">
+                        <img src="../img/dc-logo.png" alt="">
+                    </div>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
                         <a href="{{route('home')}}" class="nav-link link-dark" aria-current="page">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#home"></use>
-                            </svg>
+                            
+                            <i class="fas fa-home"></i>
                             Home
                         </a>
                     </li>
                     <li>
                         <a href="{{route('admin')}}" class="nav-link link-dark">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#speedometer2"></use>
-                            </svg>
+                            <i class="fas fa-tachometer-alt"></i>
+                            
                             Dashboard
                         </a>
                     </li>
                     <li>
                         <a href="{{route('admin.comics')}}" class="nav-link link-dark">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#table"></use>
-                            </svg>
+                            <i class="fas fa-book-open"></i>
                             Comics
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link link-dark">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#grid"></use>
-                            </svg>
+                            <i class="far fa-newspaper"></i>
                             Posts
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link link-dark">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#people-circle"></use>
-                            </svg>
+                            <i class="fas fa-gamepad"></i>
                             Games
                         </a>
                     </li>
