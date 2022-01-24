@@ -35,13 +35,44 @@
                         </td>
 
                         <td>
-                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger " data-bs-toggle="modal"
+                                data-bs-target="#delete{{ $post->id }}">
+                                Delete
+                            </button>
 
-                                <button class="btn btn-danger" type="submit">DELETE</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="delete{{ $post->id }}" tabindex="-1" role="dialog"
+                                aria-labelledby="{{ $post->id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Sei sicuro di voler eliminare il post
+                                                {{ $post->title }}?</h5>
+                                            <button type="button" class="btn-close" data-bs-bs-dismiss="modal"
+                                                aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{ $post->body }}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
 
-                            </form>
+                                                <button class="btn btn-danger" type="submit">SI, Cancella <i
+                                                        class="fa fa-trash" aria-hidden="true"></i>.</button>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </td>
                     </tr>
 
