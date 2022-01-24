@@ -17,6 +17,7 @@
                     <th>Title</th>
                     <th>Image</th>
                     <th>Body</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +26,13 @@
                         <td>{{ $post->title }}</td>
                         <td><img width="100" src="{{ $post->image }}" alt=""></td>
                         <td>{{ $post->body }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('admin.posts.show', $post->id) }}">View</a>
+                        </td>
 
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                        </td>
                     </tr>
 
                 @endforeach
