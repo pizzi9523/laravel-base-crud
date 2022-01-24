@@ -33,6 +33,16 @@
                         <td>
                             <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
                         </td>
+
+                        <td>
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="btn btn-danger" type="submit">DELETE</button>
+
+                            </form>
+                        </td>
                     </tr>
 
                 @endforeach
