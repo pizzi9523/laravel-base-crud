@@ -1,7 +1,14 @@
 @extends('layouts.admin')
 
 @section('admin_content')
-<div class="container">
+
+
+<div class="container-fluid">
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="text-center">
 
         <a class="btn btn-primary my-2" href="{{route('admin.comics.create')}}">CREATE</a>
@@ -21,7 +28,7 @@
         <tbody>
             @foreach ($comics as $comic)
                 <tr>
-                    <td scope="column">{{$comic->title}}</td>
+                    <td>{{$comic->title}}</td>
                     <td>{{$comic->description}}</td>
                     <td><img width="100" src="{{$comic->thumb}}" alt=""></td>
                     <td>{{$comic->price}}</td>
@@ -32,7 +39,7 @@
                     <td><a class="btn btn-primary" href="{{route('admin.comic.edit', $comic->id)}}">Edit</a></td>
                     <td>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modelId">
+                        <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#delete{{$comic->id}}">
                           Delete
                         </button>
                     </td>
@@ -42,7 +49,7 @@
                 
                 
                 <!-- Modal -->
-                <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                <div class="modal fade" id="delete{{$comic->id}}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -57,8 +64,8 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <form action="{{route('admin.comic.destroy', $comic->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
+                                 @csrf
+                                 @method('DELETE')
                                     <button class="btn btn-danger" type="submit">Delete</button>
                                 </form>
                             </div>
