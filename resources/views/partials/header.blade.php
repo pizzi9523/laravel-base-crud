@@ -4,7 +4,7 @@
             <nav class="nav  justify-content-end">
                 <a class="nav-link text-light" href="#">DC POWER℠VISA®</a>
                 <a class="nav-link text-light" href="#">ADDITIONAL DC SITES &dtrif;</a>
-                <a class="nav-link text-light" href="{{route('admin')}}">ADMIN</a>
+                <a class="nav-link text-light" href="{{ route('admin') }}">ADMIN</a>
 
             </nav>
         </div>
@@ -13,17 +13,19 @@
 
     <div class="container  bottom_header d-flex justify-content-between py-4">
         <div class="logo">
-            <img src="{{asset('img/dc-logo.png')}}" alt="" />
+            <img src="{{ asset('img/dc-logo.png') }}" alt="" />
         </div>
 
         <nav class="nav bottom_nav justify-content-center align-content-center ">
-            
-            <a class="nav-link" href="{{route('home')}}">HOME</a>
-            <a class="nav-link" href="{{route('comics')}}">COMICS</a>
+
+            <a class="nav-link" href="{{ route('home') }}">HOME</a>
+            <a class="nav-link" href="{{ route('comics') }}">COMICS</a>
+            <a class="nav-link" href="{{ route('posts') }}">NEWS</a>
 
 
 
-            
+
+
 
 
             <input id="search_bar" class="text-end ms-5" type="text" placeholder="Search">

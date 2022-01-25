@@ -34,6 +34,11 @@ Route::get('admin/comics/{comic}/edit', 'Admin\ComicController@edit')->name('adm
 Route::put('admin/comics/{comic}', 'Admin\ComicController@update')->name('admin.comic.update');
 Route::delete('admin/comics/{comic}', 'Admin\ComicController@destroy')->name('admin.comic.destroy');
 
+
+Route::get('posts', 'PostController@index')->name('posts');
+Route::get('posts/{post}', 'PostController@show')->name('post');
+
+
 Route::namespace('Admin')->name('admin.')->group(function () {
     Route::resource('admin/posts', 'PostController');
 });
